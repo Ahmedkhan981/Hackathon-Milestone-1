@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h1 class="heading-1">Create A Res<span class="heading-span">ume</span></h1>
+        <div class="card">
+            <form id="resumeForm">
+                <div class="profile">
+                    <h3>Profile</h3>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" class="tag" placeholder="Your name" required />
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="tag" placeholder="Your email" required />
+
+                    <label for="experience">Experience:</label>
+                    <input type="text" id="experience" class="tag" placeholder="Your experience" required />
+
+                    <label for="contact">Contact:</label>
+                    <input type="text" id="contact" class="tag" placeholder="Your contact number" required />
+                </div>
+
+                <div class="middle-tag">
+                    <label for="education">Education:</label>
+                    <textarea id="education" class="Education" placeholder="Your Education" required></textarea>
+
+                    <label for="skill">Skill:</label>
+                    <textarea id="skill" class="skills" placeholder="Your Skill" required></textarea>
+                </div>
+
+                <div class="last-tag">
+                    <input type="file" id="imageUpload" accept="image/*" class="Imagetag" />
+                    <p id="errorMessage" style="color: red;"></p>
+                    <button type="submit" class="submit-button">Generate Your Own Resume</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="cv-container" id="cvContainer" style="display: none;">
+        <h2>Your resume</h2>
+        <div class="img-div">
+            <img id="imagePreview" alt="Uploaded" style="display: none;" />
+            <div class="cv-section">
+            <h3>Profile</h3>
+            <p>Name: <span id="displayName"></span></p>
+            <p>Email: <span id="displayEmail"></span></p>
+            <p>Experience: <span id="displayExperience"></span></p>
+            <p>Contact: <span id="displayContact"></span></p>
+        </div>
+        </div>
+        <
+        <div class="cv-section">
+            <h3>Education</h3>
+            <p><span id="displayEducation"></span></p>
+        </div>
+        <div class="cv-section">
+            <h3>Skill</h3>
+            <p><span id="displaySkill"></span></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
