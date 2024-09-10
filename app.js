@@ -47,4 +47,25 @@ document.getElementById("resumeForm").addEventListener("submit", function (e) {
 	document.getElementById("displayContact").textContent = contact;
 	document.getElementById("displayEducation").textContent = education;
 	document.getElementById("displaySkill").textContent = skill;
+
+	const editableFields = [
+		"displayName",
+		"displayEmail",
+		"displayExperience",
+		"displayContact",
+		"displayEducation",
+		"displaySkill",
+	];
+
+	editableFields.forEach((fieldId) => {
+		const field = document.getElementById(fieldId);
+		field.addEventListener("click", function () {
+			field.setAttribute("contentEditable", "true");
+			field.focus();
+		});
+
+		field.addEventListener("blur", function () {
+			field.setAttribute("contentEditable", "false");
+		});
+	});
 });
