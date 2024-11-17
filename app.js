@@ -27,29 +27,30 @@ document
 				imagePreview.style.display = "flex";
 			};
 			reader.readAsDataURL(imageUpload.files[0]);
-			errorMessage.textContent = ""; // Clear any previous error message
+			errorMessage.textContent = ""; 
 		} else {
 			imagePreview.style.display = "none";
 			errorMessage.textContent = "Please upload a valid image.";
 		}
 
-		// Show the resume container
+		document.querySelector(".img-div").style.display = "flex";
+		document.querySelector(".img-div").style.gap= "1rem";
 		document.getElementById("cvContainer").style.display = "block";
 	});
 
-// Share button functionality
+
 document.getElementById("shareButton").addEventListener("click", function () {
 	const resumeContent = document.getElementById("cvContainer").innerHTML;
 	const blob = new Blob([resumeContent], { type: "text/html" });
 	const url = URL.createObjectURL(blob);
 
-	// Create a temporary link element
+
 	const link = document.createElement("a");
 	link.href = url;
-	link.download = "resume.html"; // Download file name
+	link.download = "resume.html"; 
 	document.body.appendChild(link);
-	link.click(); // Trigger the download
-	document.body.removeChild(link); // Clean up
+	link.click(); 
+	document.body.removeChild(link); 
 });
 
 
@@ -73,11 +74,10 @@ document
 		});
 		const url = URL.createObjectURL(blob);
 
-		// Create a temporary link element
 		const link = document.createElement("a");
 		link.href = url;
-		link.download = "resume.json"; // Download file name
+		link.download = "resume.json"; 
 		document.body.appendChild(link);
-		link.click(); // Trigger the download
-		document.body.removeChild(link); // Clean up
+		link.click(); 
+		document.body.removeChild(link); 
 	});
